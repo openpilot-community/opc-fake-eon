@@ -3,7 +3,7 @@
 The purpose of this Docker container is to mimic the SSH setup of the EON as closely as possible.
 It even includes freshly cloned Openpilot code in `/data/openpilot`.
 
-We created this to test Workbench without an EON needing to be present.
+We created this to test [Workbench](https://github.com/openpilot-community/workbench) without an EON needing to be present.
 Also, we could theorhetically run more than one of these to test multi-EON results in scans.
 
 This will also be used to test the new Openpilot Editor that will be built within Workbench soon.
@@ -15,19 +15,27 @@ Not going to cover this as its very easy to install.
 
 Now clone this repo to your computer...
 
-`git clone https://github.com/openpilot-community/opc-fake-eon.git ~/MyProjectsDirectory/opc-fake-eon`
+```
+git clone https://github.com/openpilot-community/opc-fake-eon.git ~/MyProjectsDirectory/opc-fake-eon
+```
 
 Change into that directory...
 
-`cd ~/MyProjectsDirectory/opc-fake-eon`
+```
+cd ~/MyProjectsDirectory/opc-fake-eon
+```
 
 Build the docker container...
 
-`docker-compose build`
+```
+docker-compose build
+```
 
 Start the docker container...
 
-`docker-compose up`
+```
+docker-compose up
+```
 
 You should now see something like the following:
 
@@ -43,7 +51,9 @@ server_1_ff1733ad9450 | sshd is running.
 
 Now switch to a new tab in your Terminal emulator and test it out...
 
-`ssh root@0.0.0.0 -p 8022 -i ~/.ssh/openpilot_rsa`
+```
+ssh root@0.0.0.0 -p 8022 -i ~/.ssh/openpilot_rsa
+```
 
 If you already had your openpilot_rsa key setup from using Workbench, this should all be successful and return something similar to below...
 
