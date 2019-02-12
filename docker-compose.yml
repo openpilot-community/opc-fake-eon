@@ -1,0 +1,12 @@
+version: '3'
+ 
+services:
+    server:
+        build:
+            context: ./docker
+            args:
+                SSH_MASTER_USER: ${SSH_MASTER_USER}
+                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+        hostname: server
+        ports:
+            - "8022:8022"
