@@ -5,7 +5,7 @@ printf "\n\033[0;44m---> Creating SSH master user.\033[0m\n"
  
 # useradd -m -d /home/${SSH_MASTER_USER} -G ssh ${SSH_MASTER_USER} -s /bin/bash
 echo -e '${SSH_MASTER_PASS}\n${SSH_MASTER_PASS}' | passwd ${SSH_MASTER_USER}
-echo 'PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin"' >> /root/.profile
+echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' >> /root/.profile
 echo 'cd /system/comma/home' >> /root/.profile
 mkdir -p /root/.ssh/
 mkdir -p /system/comma/home
